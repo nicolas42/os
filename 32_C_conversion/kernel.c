@@ -13,6 +13,8 @@
 #include "include/print/print_fileTable.h"
 #include "include/type_conversions/hex_to_ascii.h"
 
+#include "include/screen/draw_mandelbrot.h"
+
 __attribute__ ((section ("kernel_entry"))) void kernel_main(void)
 {
     uint16_t kernel_cursor_x = 0;   // Text cursor X position
@@ -59,6 +61,7 @@ __attribute__ ((section ("kernel_entry"))) void kernel_main(void)
     // --------------------------------------------------------------------
     // Clear the screen
     clear_screen();
+    draw_mandelbrot_demo();
 
     // Print OS boot message
     print_string(&kernel_cursor_x, &kernel_cursor_y, menuString);

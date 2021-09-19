@@ -3,6 +3,7 @@
 //
 #pragma once
 
+
 void clear_screen(void)
 {
     // Get 32bit pointer to framebuffer value in VBE mode info block, 
@@ -12,4 +13,6 @@ void clear_screen(void)
 
     for (uint32_t i = 0; i < 1920*1080; i++)
         framebuffer[i] = 0x000000FF;    // Write 32bit ARGB pixel to screen
+
+
 }
